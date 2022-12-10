@@ -1,4 +1,4 @@
-package mb.equip_me.services.web;
+package mb.equip_me.services.web.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 import java.util.logging.Logger;
 
 @Service
-public class WebUserService {
+public class WebItemService {
 
     @Autowired
     @LoadBalanced
@@ -16,9 +16,9 @@ public class WebUserService {
 
     protected String serviceUrl;
 
-    protected Logger logger = Logger.getLogger(WebUserService.class.getName());
+    protected Logger logger = Logger.getLogger(mb.equip_me.services.web.item.WebItemService.class.getName());
 
-    public WebUserService(String serviceUrl) {
+    public WebItemService(String serviceUrl) {
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://" + serviceUrl;
     }
 

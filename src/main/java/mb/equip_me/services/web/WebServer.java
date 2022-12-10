@@ -1,5 +1,9 @@
 package mb.equip_me.services.web;
 
+import mb.equip_me.services.web.item.WebItemController;
+import mb.equip_me.services.web.item.WebItemService;
+import mb.equip_me.services.web.user.WebUserController;
+import mb.equip_me.services.web.user.WebUserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -15,7 +19,8 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScan(useDefaultFilters=false)
 public class WebServer {
 
-    public static final String ACCOUNTS_SERVICE_URL = "http://ACCOUNTS-SERVICE";
+    public static final String USER_SERVICE_URL = "http://USER-SERVICE";
+    public static final String ITEM_SERVICE_URL = "http://ITEM-SERVICE";
 
     public static void main(String[] args) {
         System.setProperty("spring.config.name", "web-server");
@@ -30,11 +35,21 @@ public class WebServer {
 
     @Bean
     public WebUserService userService() {
-        return new WebUserService(ACCOUNTS_SERVICE_URL);
+        return new WebUserService(USER_SERVICE_URL);
     }
 
     @Bean
     public WebUserController userController() {
         return new WebUserController(userService());
+    }
+
+    @Bean
+    public WebItemService itemService() {
+        return new WebItemService(ITEM_SERVICE_URL);
+    }
+
+    @Bean
+    public WebItemController itemController() {
+        return new WebItemController(itemService());
     }
 }

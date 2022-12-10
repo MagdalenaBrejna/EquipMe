@@ -1,5 +1,6 @@
 package mb.equip_me;
 
+import mb.equip_me.services.item.ItemServer;
 import mb.equip_me.services.user.UserServer;
 import mb.equip_me.services.registration.RegistrationServer;
 import mb.equip_me.services.web.WebServer;
@@ -41,6 +42,8 @@ public class EquipMeApplication {
             UserServer.main(args);
         } else if (serverName.equals("web")) {
             WebServer.main(args);
+        } else if (serverName.equals("item")) {
+            ItemServer.main(args);
         } else {
             System.out.println("Unknown server type: " + serverName);
         }

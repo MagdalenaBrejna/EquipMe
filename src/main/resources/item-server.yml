@@ -1,11 +1,11 @@
 spring:
   application:
-    name: web-service
+    name: item-service
   freemarker:
     enabled: false
   thymeleaf:
     cache: false
-    prefix: classpath:/web-server/templates/
+    prefix: classpath:/item-server/templates/
 
 eureka:
   client:
@@ -13,4 +13,4 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
 
 server:
-  port: 3333
+  port: 4444
