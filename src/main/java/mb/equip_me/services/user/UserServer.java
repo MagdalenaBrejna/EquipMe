@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableDiscoveryClient
 @EntityScan("mb.equip_me")
 @EnableJpaRepositories("mb.equip_me")
-@PropertySource("classpath:db-config.properties")
+@PropertySource("classpath:user-server.yml")
 public class UserServer {
 
     public static void main(String[] args) {

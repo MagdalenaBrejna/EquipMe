@@ -10,8 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @EntityScan("mb.equip_me")
-@EnableJpaRepositories("mb.equip_me")
-@PropertySource("classpath:db-config.properties")
+@EnableJpaRepositories("mb.equip_me.services.item.domain")
+@PropertySource("classpath:item-server.yml")
 public class ItemServer {
 
     public static void main(String[] args) {

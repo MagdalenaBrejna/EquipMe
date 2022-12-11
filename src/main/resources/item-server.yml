@@ -6,6 +6,17 @@ spring:
   thymeleaf:
     cache: false
     prefix: classpath:/item-server/templates/
+  datasource:
+    url: jdbc:mysql://localhost:3306/equipme_item_service
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: true
 
 eureka:
   client:
